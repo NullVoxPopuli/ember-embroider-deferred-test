@@ -1,7 +1,14 @@
 {{page-title "EmberEmbroiderDeferredTest"}}
 
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
+<Toggle as |state send|>
+   {{state.value}}
+
+  <button
+    type="button"
+    {{on 'click' (fn send 'TOGGLE')}}
+  >
+    Toggle
+  </button>
+</Toggle>
 
 {{outlet}}
